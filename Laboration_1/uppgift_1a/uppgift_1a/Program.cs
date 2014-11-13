@@ -14,6 +14,7 @@ namespace RaknaA
             int storaA;
             int smaa;
 
+            Console.Write("Mata in en textrad: ");
             RaknaAString = Console.ReadLine();
 
             storaA = Uppercase(RaknaAString);
