@@ -7,8 +7,8 @@
     <ProjectGuid>{F4315074-E7E5-4A32-8F88-B9A5FE96B291}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>uppgift_1a</RootNamespace>
-    <AssemblyName>uppgift_1a</AssemblyName>
+    <RootNamespace>RaknaA</RootNamespace>
+    <AssemblyName>RaknaA</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
