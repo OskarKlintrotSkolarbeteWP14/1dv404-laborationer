@@ -33,15 +33,18 @@ namespace uppgift_1b
             for (int i = 0; i < numberArrayChar.Length; i++)
             {
                 numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
-                //Is it odd?
-                if (numberArrayInt[i] % 2 != 0 && numberArrayInt[i] != 0)
+                if (numberArrayInt[i] != 0)
                 {
-                    oddNumber = String.Format(oddNumber + "1");
-                }
-                //Is it even?
-                if (numberArrayInt[i] % 2 == 0 && numberArrayInt[i] != 0)
-                {
-                    evenNumber = String.Format(evenNumber + "1");
+                    //Is it odd?
+                    if (numberArrayInt[i] % 2 != 0)
+                    {
+                        oddNumber = String.Format(oddNumber + "1");
+                    }
+                    //Is it even?
+                    if (numberArrayInt[i] % 2 == 0)
+                    {
+                        evenNumber = String.Format(evenNumber + "1");
+                    } 
                 }
             }
 
