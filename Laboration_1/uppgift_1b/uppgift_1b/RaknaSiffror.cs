@@ -51,7 +51,23 @@ namespace uppgift_1b
 
         public int NumberOfEven()
         {
-            throw new System.NotImplementedException();
+            char[] numberArrayChar = Input.ToCharArray();
+            int[] numberArrayInt = new int[Input.Length];
+            int oldArray = Input.Length;
+            string newNumber = "0";
+
+            for (int i = 0; i < numberArrayChar.Length; i++)
+            {
+                numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
+                if (numberArrayInt[i] % 2 == 0 && numberArrayInt[i] != 0)
+                {
+                    newNumber = String.Format(newNumber + "1");
+                }
+            }
+
+            newNumber = newNumber.Replace("0", "");
+
+            return newNumber.Length;
         }
 
         public string ReadInput()
