@@ -22,6 +22,7 @@ namespace uppgift_1b
     
         public int NumberOfZero()
         {
+            string numberString = Input.ToString();
             return Input;
         }
 
@@ -38,20 +39,10 @@ namespace uppgift_1b
         public int ReadInput()
         {
             int number;
-
-            while (true)
+            Console.WriteLine("Mata in ett heltal: ");
+            while (!(int.TryParse(Console.ReadLine(), out number)))
             {
-                try
-                {
-                    Console.WriteLine("Mata in ett heltal: ");
-                    number = int.Parse(Console.ReadLine());
-                    break;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Felaktig inmatning!");
-                }
-                
+                Console.WriteLine("Felaktig inmatning, försök igen: ");   
             }
             return number;
         }
