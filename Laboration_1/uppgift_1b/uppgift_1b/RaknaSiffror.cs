@@ -12,63 +12,97 @@ namespace uppgift_1b
             Input = ReadInput();
         }
 
-        public int Zero { get; set; }
-
-        public int Odd { get; set; }
-
-        public int Even { get; set; }
-
         public string Input { get; set; }
     
-        public int NumberOfZero()
-        {
+        public int[] analysOfNumber() {
+            int[] returnValue = new int[3];
+
+            //Number of zeros
             int oldString = Input.Length;
             int newString = oldString - Input.Replace("0", "").Length;
 
-            return newString;
-        }
+            returnValue[0] = newString;
 
-        public int NumberOfOdd()
-        {
+            //Number of odd and even
             char[] numberArrayChar = Input.ToCharArray();
             int[] numberArrayInt = new int[Input.Length];
             int oldArray = Input.Length;
-            string newNumber = "0";
+            string oddNumber = "0";
+            string evenNumber = "0";
 
             for (int i = 0; i < numberArrayChar.Length; i++)
             {
                 numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
+                //Is it odd?
                 if (numberArrayInt[i] % 2 != 0 && numberArrayInt[i] != 0)
                 {
-                    newNumber = String.Format(newNumber + "1");
+                    oddNumber = String.Format(oddNumber + "1");
                 }
-            }
-
-            newNumber = newNumber.Replace("0", "");
-
-            return newNumber.Length;
-        }
-
-        public int NumberOfEven()
-        {
-            char[] numberArrayChar = Input.ToCharArray();
-            int[] numberArrayInt = new int[Input.Length];
-            int oldArray = Input.Length;
-            string newNumber = "0";
-
-            for (int i = 0; i < numberArrayChar.Length; i++)
-            {
-                numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
+                //Is it even?
                 if (numberArrayInt[i] % 2 == 0 && numberArrayInt[i] != 0)
                 {
-                    newNumber = String.Format(newNumber + "1");
+                    evenNumber = String.Format(evenNumber + "1");
                 }
             }
 
-            newNumber = newNumber.Replace("0", "");
+            evenNumber = evenNumber.Replace("0", "");
+            oddNumber = oddNumber.Replace("0", "");
 
-            return newNumber.Length;
+            returnValue[1] = oddNumber.Length;
+            returnValue[2] = evenNumber.Length;
+
+            return returnValue;
+            
         }
+        //public int NumberOfZero()
+        //{
+        //    int oldString = Input.Length;
+        //    int newString = oldString - Input.Replace("0", "").Length;
+
+        //    return newString;
+        //}
+
+        //public int NumberOfOdd()
+        //{
+        //    char[] numberArrayChar = Input.ToCharArray();
+        //    int[] numberArrayInt = new int[Input.Length];
+        //    int oldArray = Input.Length;
+        //    string newNumber = "0";
+
+        //    for (int i = 0; i < numberArrayChar.Length; i++)
+        //    {
+        //        numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
+        //        if (numberArrayInt[i] % 2 != 0 && numberArrayInt[i] != 0)
+        //        {
+        //            newNumber = String.Format(newNumber + "1");
+        //        }
+        //    }
+
+        //    newNumber = newNumber.Replace("0", "");
+
+        //    return newNumber.Length;
+        //}
+
+        //public int NumberOfEven()
+        //{
+        //    char[] numberArrayChar = Input.ToCharArray();
+        //    int[] numberArrayInt = new int[Input.Length];
+        //    int oldArray = Input.Length;
+        //    string newNumber = "0";
+
+        //    for (int i = 0; i < numberArrayChar.Length; i++)
+        //    {
+        //        numberArrayInt[i] = int.Parse(numberArrayChar[i].ToString());
+        //        if (numberArrayInt[i] % 2 == 0 && numberArrayInt[i] != 0)
+        //        {
+        //            newNumber = String.Format(newNumber + "1");
+        //        }
+        //    }
+
+        //    newNumber = newNumber.Replace("0", "");
+
+        //    return newNumber.Length;
+        //}
 
         public string ReadInput()
         {
