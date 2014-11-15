@@ -12,7 +12,9 @@ namespace uppgift_1b
         {
             RaknaSiffror Rakna = new RaknaSiffror();
 
-            Console.WriteLine(Rakna.NumberOfZero());
+            Console.WriteLine("Antal nollor: " + Rakna.analysOfNumber()[0]);
+            Console.WriteLine("Antal udda: " + Rakna.analysOfNumber()[1]);
+            Console.WriteLine("Antal jämna: " + Rakna.analysOfNumber()[2]);          
         }
     }
 }
