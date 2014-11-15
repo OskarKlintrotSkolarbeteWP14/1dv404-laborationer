@@ -22,10 +22,8 @@ namespace uppgift_1b
     
         public int NumberOfZero()
         {
-            string numberString = Input.ToString();
-
-            int oldString = numberString.Length;
-            int newString = oldString - numberString.Replace("0", "").Length;
+            int oldString = Input.Length;
+            int newString = oldString - Input.Replace("0", "").Length;
 
             return newString;
         }
