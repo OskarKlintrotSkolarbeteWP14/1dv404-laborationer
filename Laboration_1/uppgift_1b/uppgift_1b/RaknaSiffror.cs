@@ -18,12 +18,16 @@ namespace uppgift_1b
 
         public int Even { get; set; }
 
-        public int Input { get; set; }
+        public string Input { get; set; }
     
         public int NumberOfZero()
         {
             string numberString = Input.ToString();
-            return Input;
+
+            int oldString = numberString.Length;
+            int newString = oldString - numberString.Replace("0", "").Length;
+
+            return newString;
         }
 
         public int NumberOfOdd()
@@ -36,14 +40,23 @@ namespace uppgift_1b
             throw new System.NotImplementedException();
         }
 
-        public int ReadInput()
+        public string ReadInput()
         {
-            int number;
+            string number;
+            int test;
+
             Console.WriteLine("Mata in ett heltal: ");
-            while (!(int.TryParse(Console.ReadLine(), out number)))
+            while (true)
             {
-                Console.WriteLine("Felaktig inmatning, försök igen: ");   
+                number = Console.ReadLine();
+                if (!(int.TryParse(number, out test)))
+                {
+                    Console.WriteLine("Felaktig inmatning, försök igen: ");
+                    continue;
+                }
+                break;
             }
+
             return number;
         }
     }
