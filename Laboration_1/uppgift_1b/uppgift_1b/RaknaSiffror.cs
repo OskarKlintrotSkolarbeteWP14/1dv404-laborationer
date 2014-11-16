@@ -14,21 +14,22 @@ namespace uppgift_1b
 
         public string Input { get; set; }
     
-        public int[] analysOfNumber() {
-            int[] returnValue = new int[3];
-
+        public int analysNumber(string typeOfReturn) {
             //Number of zeros
-            int oldString = Input.Length;
-            int newString = oldString - Input.Replace("0", "").Length;
+            if (typeOfReturn == "Zero")
+            {
+                int oldString = Input.Length;
+                int newString = oldString - Input.Replace("0", "").Length;
 
-            returnValue[0] = newString;
+                return newString;
+
+            }
 
             //Number of odd and even
             char[] numberArrayChar = Input.ToCharArray();
             int[] numberArrayInt = new int[Input.Length];
             int oldArray = Input.Length;
-            string oddNumber = "0";
-            string evenNumber = "0";
+            string number = "0";
 
             for (int i = 0; i < numberArrayChar.Length; i++)
             {
@@ -36,25 +37,21 @@ namespace uppgift_1b
                 if (numberArrayInt[i] != 0)
                 {
                     //Is it odd?
-                    if (numberArrayInt[i] % 2 != 0)
+                    if (numberArrayInt[i] % 2 != 0 && typeOfReturn == "Odd")
                     {
-                        oddNumber = String.Format(oddNumber + "1");
+                        number = String.Format(number + "1");
                     }
                     //Is it even?
-                    if (numberArrayInt[i] % 2 == 0)
+                    if (numberArrayInt[i] % 2 == 0 && typeOfReturn == "Even")
                     {
-                        evenNumber = String.Format(evenNumber + "1");
+                        number = String.Format(number + "1");
                     } 
                 }
             }
 
-            evenNumber = evenNumber.Replace("0", "");
-            oddNumber = oddNumber.Replace("0", "");
+            number = number.Replace("0", "");
 
-            returnValue[1] = oddNumber.Length;
-            returnValue[2] = evenNumber.Length;
-
-            return returnValue;
+            return number.Length; 
             
         }
         //public int NumberOfZero()
