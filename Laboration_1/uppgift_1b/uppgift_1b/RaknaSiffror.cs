@@ -15,20 +15,17 @@ namespace uppgift_1b
         public string Input { get; set; }
     
         public int analysNumber(string typeOfReturn) {
+            int inputLength = Input.Length;
+
             //Number of zeros
             if (typeOfReturn == "Zero")
             {
-                int oldString = Input.Length;
-                int newString = oldString - Input.Replace("0", "").Length;
-
-                return newString;
-
+                return inputLength - Input.Replace("0", "").Length;
             }
 
             //Number of odd and even
             char[] numberArrayChar = Input.ToCharArray();
             int[] numberArrayInt = new int[Input.Length];
-            int oldArray = Input.Length;
             string number = "0";
 
             for (int i = 0; i < numberArrayChar.Length; i++)
