@@ -10,16 +10,21 @@ namespace uppgift_1c
     {
         static void Main(string[] args)
         {
-            int test = ReadInput();
-            Console.WriteLine(test);
+            int test1 = ReadInput(1);
+            int test2 = ReadInput(2);
+            int test3 = ReadInput(3);
+            
+            Console.WriteLine("Test 1: " + test1);
+            Console.WriteLine("Test 2: " + test2);
+            Console.WriteLine("Test 3: " + test3);
         }
 
-        private static int ReadInput()
+        private static int ReadInput(int number)
         {
             string stringNumber;
             int intNumber;
 
-            Console.WriteLine("Mata in ett heltal: ");
+            Console.WriteLine("Mata in ett heltal " + number + ": ");
             while (true)
             {
                 stringNumber = Console.ReadLine();
