@@ -10,13 +10,8 @@ namespace uppgift_1c
     {
         static void Main(string[] args)
         {
-            int test1 = ReadInput(1);
-            int test2 = ReadInput(2);
-            int test3 = ReadInput(3);
-            
-            Console.WriteLine("Test 1: " + test1);
-            Console.WriteLine("Test 2: " + test2);
-            Console.WriteLine("Test 3: " + test3);
+            int resultat = SortNumber(10);
+            Console.WriteLine("\nNäst största talet: " + resultat);
         }
 
         private static int ReadInput(int number)
@@ -37,6 +32,33 @@ namespace uppgift_1c
             }
 
             return intNumber;
+        }
+
+        private static int SortNumber(int numberOfInputs)
+        {
+            int biggestNumber = 0;
+            int secondBiggestNumber = 0;
+
+            for (int i = 1; i <= numberOfInputs; i++)
+            {
+                int compare = ReadInput(i);
+
+                if (i == 1)
+                {
+                    biggestNumber = compare;
+                }
+                else if (compare > biggestNumber)
+                {
+                    secondBiggestNumber = biggestNumber;
+                    biggestNumber = compare;
+                }
+                else if (compare > secondBiggestNumber)
+                {
+                    secondBiggestNumber = compare;
+                }
+            }
+
+            return secondBiggestNumber;
         }
     }
 }
