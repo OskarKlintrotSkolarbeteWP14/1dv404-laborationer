@@ -15,6 +15,7 @@ namespace uppgift_3b
         int _getDenominator;
 
         #endregion
+
         #region Properties
         public int getNominator { get; private set; }
         public int getDenominator
@@ -56,6 +57,8 @@ namespace uppgift_3b
             }
             return false;
         }
+
+
 
         #endregion
     }

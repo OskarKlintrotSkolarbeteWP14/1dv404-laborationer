@@ -10,12 +10,25 @@ namespace uppgift_3b
     {
         static void Main(string[] args)
         {
-            Fraction temp = new Fraction(1,2);
-            
-            if (temp.isNegativ())
+            do
             {
-                Console.WriteLine("Negativ!"); 
-            }
+                Fraction temp = new Fraction(1, 2);
+
+                if (temp.isNegativ())
+                {
+                    Console.WriteLine("Negativ!");
+                } 
+            } while (IsContinuing());
         }
+        #region Methods
+        private static bool IsContinuing()
+        {
+            Console.WriteLine(Strings.continuePrompt);
+            ConsoleKeyInfo esc;
+            esc = Console.ReadKey();
+            Console.Clear();
+            return esc.Key != ConsoleKey.Escape;
+        }
+        #endregion
     }
 }

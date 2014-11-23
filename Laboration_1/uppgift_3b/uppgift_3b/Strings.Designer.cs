@@ -61,6 +61,15 @@ namespace uppgift_3b {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tryck på valfri tangent för att fortsätta eller esc för att avbryta....
+        /// </summary>
+        internal static string continuePrompt {
+            get {
+                return ResourceManager.GetString("continuePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nämnaren får inte vara noll!.
         /// </summary>
         internal static string denominatorZeroError {
