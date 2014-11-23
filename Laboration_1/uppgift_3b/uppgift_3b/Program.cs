@@ -13,11 +13,16 @@ namespace uppgift_3b
             do
             {
                 Fraction temp = new Fraction(1, 2);
+                Fraction temp2 = new Fraction(4, 8);
 
-                if (temp.isNegativ())
+                if (temp.isEqualTo(temp2))
+                {
+                    Console.WriteLine("Positiv!");
+                }
+                else
                 {
                     Console.WriteLine("Negativ!");
-                } 
+                }
             } while (IsContinuing());
         }
         #region Methods

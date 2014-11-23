@@ -58,12 +58,12 @@ namespace uppgift_3b
             return false;
         }
 
-        public Fraction operator *(Fraction a, Fraction b)
+        public static Fraction operator *(Fraction a, Fraction b)
         {
             return new Fraction(a.getNominator * b.getNominator, a.getDenominator * b.getDenominator);
         }
 
-        public Fraction operator +(Fraction a, Fraction b)
+        public static Fraction operator +(Fraction a, Fraction b)
         {
             return new Fraction(a.getNominator * b.getDenominator + b.getNominator * a.getDenominator,
                 a.getDenominator * b.getDenominator);
@@ -71,8 +71,8 @@ namespace uppgift_3b
 
         public bool isEqualTo(Fraction a){
 
-            int fractionA = (a.getNominator / a.getDenominator) * 10000000;
-            int fractionB = (getNominator / getDenominator) * 10000000;
+            int fractionA = Convert.ToInt32((Convert.ToDouble(a.getNominator) / Convert.ToDouble(a.getDenominator)) * Convert.ToDouble(10000000));
+            int fractionB = Convert.ToInt32((Convert.ToDouble(getNominator) / Convert.ToDouble(getDenominator)) * Convert.ToDouble(10000000));
 
             if (fractionA == fractionB)
             {
