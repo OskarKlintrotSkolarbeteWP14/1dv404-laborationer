@@ -58,7 +58,28 @@ namespace uppgift_3b
             return false;
         }
 
+        public Fraction operator *(Fraction a, Fraction b)
+        {
+            return new Fraction(a.getNominator * b.getNominator, a.getDenominator * b.getDenominator);
+        }
 
+        public Fraction operator +(Fraction a, Fraction b)
+        {
+            return new Fraction(a.getNominator * b.getDenominator + b.getNominator * a.getDenominator,
+                a.getDenominator * b.getDenominator);
+        }
+
+        public bool isEqualTo(Fraction a){
+
+            int fractionA = (a.getNominator / a.getDenominator) * 10000000;
+            int fractionB = (getNominator / getDenominator) * 10000000;
+
+            if (fractionA == fractionB)
+            {
+                return true;
+            }
+            return false;
+        }
 
         #endregion
     }
