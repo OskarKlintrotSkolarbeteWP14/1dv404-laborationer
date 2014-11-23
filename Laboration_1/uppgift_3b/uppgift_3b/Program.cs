@@ -13,16 +13,12 @@ namespace uppgift_3b
             do
             {
                 Fraction temp = new Fraction(1, 2);
-                Fraction temp2 = new Fraction(4, 8);
+                Fraction temp2 = new Fraction(1, 4);
+                Fraction mult = temp * temp2;
+                Fraction sum = temp + temp2;
 
-                if (temp.isEqualTo(temp2))
-                {
-                    Console.WriteLine("Positiv!");
-                }
-                else
-                {
-                    Console.WriteLine("Negativ!");
-                }
+                Console.WriteLine(temp + " * " + temp2 + " = " + mult);
+                Console.WriteLine(temp + " + " + temp2 + " = " + sum);
             } while (IsContinuing());
         }
         #region Methods

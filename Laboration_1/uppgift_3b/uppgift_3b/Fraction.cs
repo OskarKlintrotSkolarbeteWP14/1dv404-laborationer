@@ -81,6 +81,15 @@ namespace uppgift_3b
             return false;
         }
 
+        public override string ToString()
+        {
+            if (getNominator == getDenominator)
+            {
+                return "1";
+            }
+            return getNominator + "/" + getDenominator;
+        }
+
         #endregion
     }
 }

@@ -61,7 +61,7 @@ namespace uppgift_3b {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tryck på valfri tangent för att fortsätta eller esc för att avbryta....
+        ///   Looks up a localized string similar to Tryck ESC för att avsluta eller valfri tangent för att fortsätta..
         /// </summary>
         internal static string continuePrompt {
             get {
