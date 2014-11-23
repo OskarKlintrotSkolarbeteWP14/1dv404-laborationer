@@ -45,5 +45,18 @@ namespace uppgift_3b
         }
 
         #endregion
+
+        #region Methods
+
+        public bool isNegativ()
+        {
+            if (getNominator < 0 || getDenominator < 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        #endregion
     }
 }

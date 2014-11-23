@@ -11,7 +11,11 @@ namespace uppgift_3b
         static void Main(string[] args)
         {
             Fraction temp = new Fraction(1,2);
-            Console.WriteLine(temp);
+            
+            if (temp.isNegativ())
+            {
+                Console.WriteLine("Negativ!"); 
+            }
         }
     }
 }
